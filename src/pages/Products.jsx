@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Header from '../components/layout/Header'
-import Footer from '../components/layout/Footer'
+import Navbar from '../components/Navbar'
+import Footer from '../components/footer'
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState('Hair Care')
@@ -175,6 +175,7 @@ const Products = () => {
 
   return (
     <div className="min-h-screen text-white" style={{backgroundColor: '#222222'}}>
+      <Navbar />
      
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -320,7 +321,7 @@ const Products = () => {
         )}
       </div>
 
-     
+      <Footer />
     </div>
   )
 }

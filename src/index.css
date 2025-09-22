@@ -1,3 +1,609 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* Tailwind base, components, utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Custom Poetsen One font */
+@font-face {
+  font-family: 'Poetsen One';
+  src: url('https://www.fontget.com/fonts/poetsen-one/PoetsenOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Font Classes */
+.font-poetsen {
+  font-family: 'Poetsen One', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Component Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.navbar a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #ffcc00;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Remove underline from navbar links */
+.no-underline {
+  text-decoration: none !important;
+}
+
+/* Navbar Buttons - Book Appointment */
+.navbar-btn {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-btn:hover {
+  background-color: orange;
+  border-color: orange;
+  color: white;
+}
+
+/* Sign In button variant */
+.outline-btn {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+}
+
+.outline-btn:hover {
+  background-color: orange;
+  border-color: orange;
+  color: white;
+}
+
+/* Move buttons slightly to the right */
+.navbar-right {
+  display: flex;
+  gap: 1rem;
+  margin-left: 1rem;
+}
+
+.navbar-btn,
+.outline-btn {
+  text-decoration: none !important;
+}
+
+
+.logo {
+  font-weight: 700;
+  color: #fff; 
+  flex-shrink: 0;
+  font-size: 1.5rem;
+}
+
+.logo-2 {
+  color: #ffcc00;
+}
+
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 2rem;
+  margin-bottom: 0;
+}
+
+.hero-content h1 {
+  font-size: 5vw;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-family: 'Poetsen One', sans-serif;
+}
+
+.hero-content h2 {
+  font-size: 2.5vw;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-family: 'Poetsen One', sans-serif;
+}
+
+.hero-actions {
+  margin-top: 1rem;
+}
+
+/* Buttons */
+.btn-white {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  outline: none;
+}
+
+.btn-white:hover {
+  background: #ffcc00c1;
+  transform: scale(1.03);
+}
+
+.btn-white:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.5);
+}
+
+.btn-outline {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  outline: none;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-outline:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-large {
+  padding: 1rem 2rem;
+  margin: 0 0.5rem;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-large:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Services Section */
+.services-section {
+  background: #222222;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.section-title,
+.section-title-black,
+.section-title-white {
+  font-family: 'Poetsen One', sans-serif;
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.service-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #fff;
+  border-radius: 15px;
+  width: 280px;
+  padding: 1rem;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(255, 204, 0, 0.2);
+}
+
+.service-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+}
+
+.service-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid #fff;
+}
+
+.service-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #A6A6A6;
+  margin-bottom: 0.8rem;
+}
+
+.read-more {
+  font-size: 1rem;
+  color: #000;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+.view-all-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.view-all-btn:hover {
+  background: #ffcc00d7;
+  color: #000;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+}
+
+/* Why Choose Us */
+.why-choose-us {
+  background: #fff;
+  padding: 1.5rem 2rem 2.5rem 2rem; 
+  text-align: center;
+}
+
+.why-choose-us .section-title-black {
+  font-family: 'Poetsen One', sans-serif;
+  font-size: 3rem;
+  color: #000;
+  margin-top: 0; 
+  margin-bottom: 2rem;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: space-between; 
+  gap: 1.2rem; 
+  flex-wrap: wrap;
+  margin-top: 1rem; 
+}
+
+.feature-card {
+  flex: 1 1 200px; 
+  max-width: 210px; 
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem; 
+}
+
+.feature-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Testimonials */
+.testimonials {
+  background: #222222;
+  padding: 3rem 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.testimonial-card {
+  border: 2px solid #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  position: relative;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.testimonial-info {
+  text-align: left;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  margin: 0;
+}
+
+.testimonial-stars span {
+  color: #ffcc00;
+  margin-right: 0.2rem;
+}
+
+.testimonial-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #111;
+  color: #fff;
+  padding: 3rem 5%;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-us p {
+  line-height: 2;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.footer-barber {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer-barber-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.footer-barber-text p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.footer-barber-text button {
+  padding: 0.5rem 1.5rem;
+  background-color: #fff;
+  color: #111;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5.5rem;
+  margin-top: 2rem; 
+}
+
+/* Links Section */
+.footer-links {
+  display: flex;
+  gap: 5rem;
+  flex: 1;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.footer-links h3 {
+  font-family: 'Poetsen One', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f1c40f;
+}
+
+/* Privacy Section */
+.footer-privacy {
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.footer-privacy p {
+  margin: 0.3rem 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
