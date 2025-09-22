@@ -43,7 +43,7 @@ const Home = () => {
             Not just a haircut, a transformation
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/contact">
+            <Link to="/bookappointment">
               <button 
                 className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-300"
                 style={{ fontFamily: 'Poppins' }}
@@ -100,12 +100,14 @@ const Home = () => {
               >
                 From classic cuts to modern fades, tailored to your look with precision
               </p>
-              <button 
-                className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
-                style={{ fontFamily: 'Poppins' }}
-              >
-                Read more...
-              </button>
+              <Link to="/haircut">
+                <button 
+                  className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                  style={{ fontFamily: 'Poppins' }}
+                >
+                  Read more...
+                </button>
+              </Link>
             </div>
 
             {/* Shaving Card */}
@@ -127,12 +129,14 @@ const Home = () => {
               >
                 Traditional shaves & luxury hot towel treatment for a clean, sharp finish
               </p>
-              <button 
-                className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
-                style={{ fontFamily: 'Poppins' }}
-              >
-                Read more...
-              </button>
+              <Link to="/beardshaving">
+                <button 
+                  className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                  style={{ fontFamily: 'Poppins' }}
+                >
+                  Read more...
+                </button>
+              </Link>
             </div>
 
             {/* Styling Card */}
@@ -154,12 +158,14 @@ const Home = () => {
               >
                 Professional styling with premium products to keep you looking sharp
               </p>
-              <button 
-                className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
-                style={{ fontFamily: 'Poppins' }}
-              >
-                Read more...
-              </button>
+              <Link to="/hairstyling">
+                <button 
+                  className="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                  style={{ fontFamily: 'Poppins' }}
+                >
+                  Read more...
+                </button>
+              </Link>
             </div>
           </div>
 
