@@ -305,7 +305,7 @@ const Products = () => {
           <h1 
             className="text-white mb-4"
             style={{
-              fontFamily: 'Poetsen One, cursive',
+              fontFamily: 'Poetsen One',
               fontWeight: 400,
               fontStyle: 'bold ',
               fontSize: '60px',
