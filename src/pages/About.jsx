@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import Navbar from '../components/Navbar'
-import Footer from '../components/footer'
+import Footer from '../components/layout/Footer'
 
 const About = () => {
   const scrollContainerRef = useRef(null)
@@ -52,7 +52,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen text-white" style={{backgroundColor: '#222222'}}>
-     
+      <Navbar />
 
       {/* Our Story Section */}
       <section className="py-16">
@@ -250,7 +250,7 @@ const About = () => {
         </div>
       </section>
 
-     
+      <Footer />
     </div>
   )
 }
