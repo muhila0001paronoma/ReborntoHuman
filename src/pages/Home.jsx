@@ -17,12 +17,12 @@ const Home = () => {
       >
         <div className="text-center z-10">
           <h1 
-            className="text-6xl md:text-8xl font-bold text-white mb-6"
+            className="text-white mb-6"
             style={{
-              fontFamily: 'Poetsen One',
+              fontFamily: 'Poetsen One, sans-serif',
               fontWeight: 400,
               fontStyle: 'normal',
-              fontSize: '80px',
+              fontSize: '130px',
               lineHeight: '100%',
               letterSpacing: '0%'
             }}

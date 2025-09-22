@@ -1,7 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./src/components/Navbar";
-import Footer from "./src/components/footer";
+import Footer from "./src/components/layout/Footer";
+
+// Import images
+import headerImage from "./src/assets/images/Header.png";
+import haircutImage from "./src/assets/images/haircut.png";
+import shavingImage from "./src/assets/images/shaving.png";
+import stylingImage from "./src/assets/images/styling.png";
+import scissorsImage from "./src/assets/images/scissors.png";
+import starImage from "./src/assets/images/star.png";
+import easyImage from "./src/assets/images/easy.png";
+import dollarImage from "./src/assets/images/dollar.png";
+import johnImage from "./src/assets/images/john.png";
 
 function Home() {
   return (
@@ -26,7 +37,7 @@ function Home() {
       {/* --- Hero Section --- */}
       <section 
         className="hero"
-        style={{ backgroundImage: "url('/Header.png')" }}
+        style={{ backgroundImage: `url(${headerImage})` }}
       >
         <div className="overlay">
           <div className="hero-content">
@@ -48,7 +59,7 @@ function Home() {
           <Link to="/haircuts" className="service-card-link no-underline">
             <div className="service-card">
               <div className="service-image-wrapper">
-                <img src="/haircut.png" alt="Haircut" className="service-image" />
+                <img src={haircutImage} alt="Haircut" className="service-image" />
                 <div className="service-overlay"></div>
               </div>
               <h3>Haircut</h3>
@@ -61,7 +72,7 @@ function Home() {
           <Link to="/beard-shaving" className="service-card-link no-underline">
             <div className="service-card">
               <div className="service-image-wrapper">
-                <img src="/shaving.png" alt="Shaving" className="service-image" />
+                <img src={shavingImage} alt="Shaving" className="service-image" />
                 <div className="service-overlay"></div>
               </div>
               <h3>Shaving</h3>
@@ -74,7 +85,7 @@ function Home() {
           <Link to="/hairstyling" className="service-card-link no-underline">
             <div className="service-card">
               <div className="service-image-wrapper">
-                <img src="/styling.png" alt="Styling" className="service-image" />
+                <img src={stylingImage} alt="Styling" className="service-image" />
                 <div className="service-overlay"></div>
               </div>
               <h3>Styling</h3>
@@ -96,19 +107,19 @@ function Home() {
         <h2 className="section-title-black">Why Choose Us</h2>
         <div className="features-grid">
           <div className="feature-card">
-            <img src="/scissors.png" alt="Expert Barbers" />
+            <img src={scissorsImage} alt="Expert Barbers" />
             <p>Expert Barbers</p>
           </div>
           <div className="feature-card">
-            <img src="/star.png" alt="Premium Products" />
+            <img src={starImage} alt="Premium Products" />
             <p>Premium Products</p>
           </div>
           <div className="feature-card">
-            <img src="/easy.png" alt="Easy Online Booking" />
+            <img src={easyImage} alt="Easy Online Booking" />
             <p>Easy Online Booking</p>
           </div>
           <div className="feature-card">
-            <img src="/dollar.png" alt="Reasonable Price" />
+            <img src={dollarImage} alt="Reasonable Price" />
             <p>Reasonable Price</p>
           </div>
         </div>
@@ -132,7 +143,7 @@ function Home() {
                 <span>★</span>
               </div>
             </div>
-            <img src="/john.png" alt="John" className="testimonial-image" />
+            <img src={johnImage} alt="John" className="testimonial-image" />
           </div>
         </div>
       </section>
