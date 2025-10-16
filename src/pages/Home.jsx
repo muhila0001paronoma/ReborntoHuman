@@ -43,7 +43,7 @@ const Home = () => {
             Not just a haircut, a transformation
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/bookappointment">
+            <Link to="/book-appointment">
               <button 
                 className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-black transition-all duration-300"
                 style={{ fontFamily: 'Poppins' }}

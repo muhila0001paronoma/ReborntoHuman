@@ -34,7 +34,7 @@ function Navbar() {
       {/* Right Buttons */}
       <div className="flex items-center space-x-4">
         <Link
-          to="/bookappointment"
+          to="/book-appointment"
           className="px-5 py-2 bg-white text-black rounded-lg no-underline hover:bg-yellow-400 transition-all font-semibold"
         >
           Book Appointment
