@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ProfilePopup = ({ isOpen, onClose }) => {
+const ProfilePopup = ({ isOpen, onClose, onLogout }) => {
   const [activeSection, setActiveSection] = useState('My Profile');
 
   const sections = [
@@ -23,19 +23,22 @@ const ProfilePopup = ({ isOpen, onClose }) => {
               {/* Profile Picture and Basic Info */}
               <div className="flex items-center space-x-6 mb-8">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+                  src="/src/assets/images/h5.png"
                   alt="Profile"
                   className="w-24 h-24 rounded-full object-cover border-4 border-gray-300"
+                  onError={(e) => {
+                    e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDgiIGN5PSI0OCIgcj0iNDgiIGZpbGw9IiM2MzY2RjEiLz4KPHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIyNCIgeT0iMjQiPgo8cGF0aCBkPSJNMjQgMjRDMjguNDE4MyAyNCAzMiAyMC40MTgzIDMyIDE2QzMyIDExLjU4MTcgMjguNDE4MyA4IDI0IDhDMTkuNTgxNyA4IDE2IDExLjU4MTcgMTYgMTZDMTYgMjAuNDE4MyAxOS41ODE3IDI0IDI0IDI0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTI0IDI4QzE3LjM3MjYgMjggMTIgMzMuMzcyNiAxMiA0MEg0MEM0MCAzMy4zNzI2IDM0LjYyNzQgMjggMjggMjhIMjRaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9zdmc+';
+                  }}
                 />
                 <div>
                   <h3 className="text-2xl font-bold text-black mb-2" style={{ fontFamily: 'Poppins' }}>
-                    John Doe
+                    John
                   </h3>
                   <p className="text-gray-600" style={{ fontFamily: 'Poppins' }}>
-                    john.doe@example.com
+                    john@gmail.com
                   </p>
                   <p className="text-gray-600" style={{ fontFamily: 'Poppins' }}>
-                    +94 77 123 4567
+                    +7455332523
                   </p>
                 </div>
               </div>
@@ -257,10 +260,10 @@ const ProfilePopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl w-full max-w-4xl h-[80vh] flex overflow-hidden">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] p-4">
+      <div className="bg-white rounded-2xl w-full max-w-4xl h-[80vh] max-h-[600px] flex flex-col md:flex-row overflow-hidden shadow-2xl relative">
         {/* Left Sidebar */}
-        <div className="bg-black w-64 flex flex-col">
+        <div className="bg-black w-full md:w-64 flex flex-col">
           <div className="p-6">
             <div className="space-y-2">
               {sections.map((section) => (
@@ -282,7 +285,14 @@ const ProfilePopup = ({ isOpen, onClose }) => {
           
           {/* Logout Button */}
           <div className="mt-auto p-6">
-            <button className="flex items-center space-x-3 text-white hover:text-red-400 transition-colors" style={{ fontFamily: 'Poppins' }}>
+            <button 
+              onClick={() => {
+                onLogout();
+                onClose();
+              }}
+              className="flex items-center space-x-3 text-white hover:text-red-400 transition-colors" 
+              style={{ fontFamily: 'Poppins' }}
+            >
               <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />

@@ -1,7 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const [formData, setFormData] = useState({
+    username: '',
+    password: ''
+  });
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // For demo purposes, we'll just navigate back to home and set a flag
+    // In a real app, you'd validate credentials and handle authentication
+    console.log('Sign in attempt:', formData);
+    
+    // Store authentication state in localStorage
+    localStorage.setItem('isAuthenticated', 'true');
+    localStorage.setItem('user', JSON.stringify({
+      name: 'John',
+      email: 'john@gmail.com',
+      phone: '+7455332523'
+    }));
+    
+    // Navigate back to home page
+    navigate('/');
+    
+    // Reload the page to update the navbar state
+    window.location.reload();
+  };
+
   return (
     <div className="w-full h-screen bg-black bg-opacity-50 flex items-center justify-center p-4">
       {/* Popup Card */}
@@ -34,7 +69,7 @@ const SignIn = () => {
           </p>
 
           {/* Form fields */}
-          <form className="mt-6 space-y-5">
+          <form onSubmit={handleSubmit} className="mt-6 space-y-5">
             {/* Username */}
             <div className="flex items-center space-x-4">
               <div className="bg-[#2B2B2B] w-12 h-12 rounded-lg flex items-center justify-center">
@@ -52,8 +87,12 @@ const SignIn = () => {
               </div>
               <input
                 type="text"
+                name="username"
                 placeholder="Username"
+                value={formData.username}
+                onChange={handleInputChange}
                 className="flex-1 h-12 rounded-lg bg-[#F0F0F0] px-4 text-sm font-poppins text-gray-700 outline-none focus:ring-2 focus:ring-black focus:bg-white transition-all"
+                required
               />
             </div>
 
@@ -74,8 +113,12 @@ const SignIn = () => {
               </div>
               <input
                 type="password"
+                name="password"
                 placeholder="Password"
+                value={formData.password}
+                onChange={handleInputChange}
                 className="flex-1 h-12 rounded-lg bg-[#F0F0F0] px-4 text-sm font-poppins text-gray-700 outline-none focus:ring-2 focus:ring-black focus:bg-white transition-all"
+                required
               />
             </div>
 

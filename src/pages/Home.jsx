@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../components/layout/Header'
+import Navbar from '../components/Navbar'
 import Footer from '../components/layout/Footer'
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      
+      <Navbar />
 
       {/* Hero Section */}
       <section 
