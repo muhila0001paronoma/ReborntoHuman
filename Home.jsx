@@ -44,8 +44,12 @@ function Home() {
             <h1>Reborn 2 Human</h1>
             <h2>Not just a haircut, a transformation</h2>
             <div className="hero-actions">
-              <button className="btn-outline-large">Book Appointment</button>
-              <button className="btn-outline-large">Purchase Products</button>
+              <Link to="/book-appointment" className="no-underline">
+                <button className="btn-outline-large">Book Appointment</button>
+              </Link>
+              <Link to="/products" className="no-underline">
+                <button className="btn-outline-large">Purchase Products</button>
+              </Link>
             </div>
           </div>
         </div>
